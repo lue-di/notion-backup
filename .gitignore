@@ -1,0 +1,24 @@
+# 凭据
+.env
+.env.*
+!.env.example
+
+# 备份数据
+*.db
+*.db-wal
+*.db-shm
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.coverage
+build/
+dist/
+
+# 编辑器 / 系统
+.idea/
+.vscode/
+.DS_Store

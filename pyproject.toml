@@ -1,0 +1,39 @@
+[project]
+name = "notion-backup"
+version = "0.1.0"
+description = "Back up a Notion account block-by-block into a local SQLite database"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [{ name = "luedi" }]
+dependencies = [
+    "httpx>=0.27",
+    "python-dotenv>=1.0",
+    "rich>=13.7",
+    "typer>=0.12",
+]
+
+[project.urls]
+Repository = "https://github.com/lue-di/notion-backup"
+
+[project.scripts]
+notion-backup = "notion_backup.cli:app"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+    "respx>=0.21",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["notion_backup"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
